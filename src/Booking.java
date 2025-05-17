@@ -12,13 +12,12 @@ public class Booking {
         this.otherGuests = otherGuests;
     }
 
-    public void addGuest(Guest guest) {
-        otherGuests.add(guest);
-    }
+    public void addGuest(Guest guest) {otherGuests.add(guest)
+        ;} // potrebuji tento konstruktor?? kdyz ve tride Room mam podobny, bez ktereho se me hlasi chyba
 
     public void removeGuest(Guest guest) {
         otherGuests.remove(guest);
-    }
+    }       // potrebuji tento konstruktor?? kdyz ve tride Room mam podobny, bez ktereho se me hlasi chyba
 
     public List<Guest> getotherGuests() {
 

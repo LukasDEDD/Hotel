@@ -35,5 +35,19 @@ public class Main {
         occupiedRooms.add(room1);
         occupiedRooms.add(room2);
         occupiedRooms.add(room3);
+
+        Room reservationRoom1 = new Room(1, LocalDate.of(2021,7,19), LocalDate.of(2021,7,26));
+
+        room1.addGuest(adelaMalikova);
+
+        Room reservationRoom3 = new Room(3, LocalDate.of(2021,9,1), LocalDate.of(2021,9,14));
+
+        room3.addGuest(adelaMalikova,janDvoracek);
+
+        List <Room> otherGuests=new ArrayList<>();
+             otherGuests.add(reservationRoom1);
+             otherGuests.add(reservationRoom3);
+
         }
+
     }

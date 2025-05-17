@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class Room {
@@ -25,6 +26,10 @@ public class Room {
     }
 
     public Room(int roomNumber, boolean balcony, int numberOfBeds, boolean seaView, int price) {
+    }
+
+    public Room(int roomNumber, LocalDate checkIn, LocalDate checkOut) {
+
     }
 
     public int getRoomNumber() {
@@ -90,4 +95,12 @@ public class Room {
     public void setWorkingStay(Boolean workingStay) {
         isWorkingStay = workingStay;
     }
+
+    public void addGuest(Guest guest1) {
+        ;}
+            // !!!!!! - je tento konstruktor spravne???
+    public void addGuest(Guest guest1, Guest guest2) {
+        ;}  // !!!!!! - je tento konstruktor spravne??? nemaji byt ve ride Booking??
+
 }
+
