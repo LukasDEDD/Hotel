@@ -1,5 +1,4 @@
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,9 +27,13 @@ public class Main {
                 new Room(1,true,1,true,1000);
 
         Room room2=
-                new Room(1,true,1,true,1000);
+                new Room(2,true,1,true,1000);
+
+        Room room3 =
+                new Room(3,false,3,true,2400);
 
         occupiedRooms.add(room1);
         occupiedRooms.add(room2);
+        occupiedRooms.add(room3);
         }
     }
