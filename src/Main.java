@@ -24,5 +24,13 @@ public class Main {
 
         List<Room>occupiedRooms= new ArrayList<>();
 
+        Room room1=
+                new Room(1,true,1,true,1000);
+
+        Room room2=
+                new Room(1,true,1,true,1000);
+
+        occupiedRooms.add(room1);
+        occupiedRooms.add(room2);
         }
     }

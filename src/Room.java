@@ -24,6 +24,9 @@ public class Room {
 
     }
 
+    public Room(int roomNumber, boolean balcony, int numberOfBeds, boolean seaView, int price) {
+    }
+
     public int getRoomNumber() {
         return roomNumber;
     }
