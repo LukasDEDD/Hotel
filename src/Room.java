@@ -3,48 +3,35 @@ import java.time.LocalDateTime;
 
 public class Room {
 
-    private int roomNumber;
-    private int numberOfBeds;
+    private Integer roomNumber;
+    private Integer numberOfBeds;
     private Boolean balcony;
     private Boolean seaView;
     private double price;
-    private LocalDateTime checkIn;
-    private LocalDateTime checkOut;
-    private Boolean isWorkingStay;
 
-    public Room(int roomNumber, Boolean balcony, int numberOfBeds, Boolean seaView, double price, LocalDateTime checkOut, LocalDateTime checkIn, Boolean isWorkingStay) {
-        this.roomNumber = roomNumber;
-        this.balcony = balcony;
+
+
+    public Room(Integer numberOfBeds, Boolean balcony, Integer roomNumber, Boolean seaView, double price) {
         this.numberOfBeds = numberOfBeds;
+        this.balcony = balcony;
+        this.roomNumber = roomNumber;
         this.seaView = seaView;
         this.price = price;
-        this.checkOut = checkOut;
-        this.checkIn = checkIn;
-        this.isWorkingStay = isWorkingStay;
-
-
     }
 
-    public Room(int roomNumber, boolean balcony, int numberOfBeds, boolean seaView, int price) {
-    }
-
-    public Room(int roomNumber, LocalDate checkIn, LocalDate checkOut) {
-
-    }
-
-    public int getRoomNumber() {
+    public Integer getRoomNumber() {
         return roomNumber;
     }
 
-    public void setRoomNumber(int roomNumber) {
+    public void setRoomNumber(Integer roomNumber) {
         this.roomNumber = roomNumber;
     }
 
-    public int getNumberOfBeds() {
+    public Integer getNumberOfBeds() {
         return numberOfBeds;
     }
 
-    public void setNumberOfBeds(int numberOfBeds) {
+    public void setNumberOfBeds(Integer numberOfBeds) {
         this.numberOfBeds = numberOfBeds;
     }
 
@@ -68,39 +55,24 @@ public class Room {
         return price;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    @Override
+    public String toString() {
+        return "Room{" +
+                "roomNumber=" + roomNumber +
+                ", numberOfBeds=" + numberOfBeds +
+                ", balcony=" + balcony +
+                ", seaView=" + seaView +
+                ", price=" + price +
+                '}';
     }
 
-    public LocalDateTime getCheckIn() {
-        return checkIn;
+
     }
 
-    public void setCheckIn(LocalDateTime checkIn) {
-        this.checkIn = checkIn;
-    }
 
-    public LocalDateTime getCheckOut() {
-        return checkOut;
-    }
 
-    public void setCheckOut(LocalDateTime checkOut) {
-        this.checkOut = checkOut;
-    }
 
-    public Boolean getWorkingStay() {
-        return isWorkingStay;
-    }
 
-    public void setWorkingStay(Boolean workingStay) {
-        isWorkingStay = workingStay;
-    }
 
-    public void addGuest(Guest guest1) {
-        ;}
-            // !!!!!! - je tento konstruktor spravne???
-    public void addGuest(Guest guest1, Guest guest2) {
-        ;}  // !!!!!! - je tento konstruktor spravne??? nemaji byt ve ride Booking??
 
-}
 

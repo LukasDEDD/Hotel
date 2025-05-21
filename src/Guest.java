@@ -30,11 +30,23 @@ public class Guest {
         this.name = name;
     }
 
+
+
     public Guest(String name, String surname, LocalDate birthDate) {
         this.name = name;
         this.surname = surname;
         this.birthDate = birthDate;
 
+    }
+
+
+        @Override
+        public String toString() {
+            return "Guest{" +
+                    "name='" + name + '\'' +
+                    ", surname='" + surname + '\'' +
+                    ", birthDate=" + birthDate +
+                    '}';
 
     }
 }
