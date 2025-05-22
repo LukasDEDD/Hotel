@@ -39,7 +39,9 @@ public class Guest {
 
     }
 
-
+    public String getDescription() {
+        return name + " " + surname + " (" + birthDate + ")";
+    }
         @Override
         public String toString() {
             return "Guest{" +

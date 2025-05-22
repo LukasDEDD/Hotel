@@ -4,17 +4,15 @@ import java.time.LocalDateTime;
 public class Room {
 
     private Integer roomNumber;
-    private Integer numberOfBeds;
+    private Integer capacity;
     private Boolean balcony;
     private Boolean seaView;
     private double price;
 
-
-
-    public Room(Integer numberOfBeds, Boolean balcony, Integer roomNumber, Boolean seaView, double price) {
-        this.numberOfBeds = numberOfBeds;
-        this.balcony = balcony;
+    public Room(Integer roomNumber, Integer capacity, Boolean balcony, Boolean seaView, double price) {
         this.roomNumber = roomNumber;
+        this.capacity = capacity;
+        this.balcony = balcony;
         this.seaView = seaView;
         this.price = price;
     }
@@ -27,12 +25,12 @@ public class Room {
         this.roomNumber = roomNumber;
     }
 
-    public Integer getNumberOfBeds() {
-        return numberOfBeds;
+    public Integer getCapacity() {
+        return capacity;
     }
 
-    public void setNumberOfBeds(Integer numberOfBeds) {
-        this.numberOfBeds = numberOfBeds;
+    public void setCapacity(Integer capacity) {
+        this.capacity = capacity;
     }
 
     public Boolean getBalcony() {
@@ -55,19 +53,32 @@ public class Room {
         return price;
     }
 
-    @Override
-    public String toString() {
-        return "Room{" +
-                "roomNumber=" + roomNumber +
-                ", numberOfBeds=" + numberOfBeds +
-                ", balcony=" + balcony +
-                ", seaView=" + seaView +
-                ", price=" + price +
-                '}';
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public String getRoomDescription () {
+            String description = "Pokoj číslo: " + roomNumber + ": " + capacity + " lůžka, balkón: ";
+            if (balcony) {
+                description += "ano";
+            } else {
+                description += "ne";
+            }
+            description += ", výhled na moře: ";
+            if (seaView) {
+                description += "ano";
+            } else {
+                description += "ne";
+            }
+            description += ", cena za noc: " + price + " Kč";
+            return description;
+        }
     }
 
 
-    }
+
+
+
 
 
 
