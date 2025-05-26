@@ -10,6 +10,11 @@ public class Booking {
     private Boolean isWorkingStay;
     private List<Room> listRoom = new ArrayList<>();
     private List<Guest> listGuest = new ArrayList<>();
+    private List <Main> bookingList = new ArrayList<>();
+
+    public Booking(List<Main> bookingList) {
+        this.bookingList = bookingList;
+    }
 
     public Booking(Room room, Guest guest, LocalDate checkIn, LocalDate checkOut, Boolean isWorkingStay) {
         this.room = room;
@@ -84,6 +89,14 @@ public class Booking {
         this.listRoom = listRoom;
     }
 
+    public List<Main> getBookingList() {
+        return bookingList;
+    }
+
+    public void setBookingList(List<Main> bookingList) {
+        this.bookingList = bookingList;
+    }
+
     public List<Guest> addListGuest() {
         return listGuest;
     }
@@ -92,6 +105,9 @@ public class Booking {
         return listGuest;
     }
 
+    public int getGuestsCount () {
+        return listGuest.size();
+    }
 
         public String getBookingDescription () {
             StringBuilder result = new StringBuilder("Rezervace pro: " + guest.getDescription() + " na: " + room.getRoomNumber()
