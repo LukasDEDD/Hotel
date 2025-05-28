@@ -7,7 +7,7 @@ public class Booking {
     private Guest guest;
     private LocalDate checkIn;
     private LocalDate checkOut;
-    private Boolean isWorkingStay;
+    private Boolean WorkingStay;
     private List<Room> listRoom = new ArrayList<>();
     private List<Guest> listGuest = new ArrayList<>();
     private List <Main> bookingList = new ArrayList<>();
@@ -21,7 +21,7 @@ public class Booking {
         this.guest = guest;
         this.checkIn = checkIn;
         this.checkOut = checkOut;
-        this.isWorkingStay = isWorkingStay;
+        this.WorkingStay = isWorkingStay;
 
     }
 
@@ -73,12 +73,12 @@ public class Booking {
         this.checkOut = checkOut;
     }
 
-    public Boolean getWorkingStay() {
-        return isWorkingStay;
+    public Boolean WorkingStay() {
+        return WorkingStay;
     }
 
     public void setWorkingStay(Boolean workingStay) {
-        isWorkingStay = workingStay;
+        WorkingStay = workingStay;
     }
 
     public List<Room> getListRoom() {
@@ -112,7 +112,7 @@ public class Booking {
         public String getBookingDescription () {
             StringBuilder result = new StringBuilder("Rezervace pro: " + guest.getDescription() + " na: " + room.getRoomNumber()
                     + " termín: " + checkIn + " - " + checkOut
-                    + " pracovní pobyt: " + (isWorkingStay "?" "ano" : "ne"));
+                    + " pracovní pobyt: " + (WorkingStay ? "ano" : "ne"));
             if (!listGuest.isEmpty()) {
                 result.append(", další hosté: \n");
                 for (Guest guest : listGuest) {

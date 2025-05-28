@@ -26,7 +26,7 @@ public class BookingManager {
     public int getNumberOfWorkingBookings() {
         int count = 0;
         for (Booking booking : listOfReservations) {
-            if (booking.getWorkingStay()) {
+            if (booking.WorkingStay()) {
                 count++;
             }
 
@@ -48,7 +48,7 @@ public class BookingManager {
             if (countOfBookings >= bookingsCount) {
                 break;
             }
-            if (! booking.isWorkingStay()) {
+            if (! booking.WorkingStay()) {
                 result.add(booking);
                 countOfBookings++;
             }
