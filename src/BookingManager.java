@@ -5,6 +5,8 @@ public class BookingManager {
 
     private List<Booking> listOfReservations = new ArrayList<>();
 
+
+
     public void addBooking(Booking booking) {
         listOfReservations.add(booking);
     }
@@ -27,11 +29,36 @@ public class BookingManager {
             if (booking.getWorkingStay()) {
                 count++;
             }
+
         }
         return count;
+    }
+    public double getAverageGuests () {
+        double sum  = 0;
+        for (Booking booking : listOfReservations) {
+            sum += booking.getGuestsCount();
+        }
+        return sum/listOfReservations.size();
+    }
+    public List<Booking> getTopNHolidayBookings(int bookingsCount) {
+        int countOfBookings = 0;
+        List<Booking> result = new ArrayList<>();
+        int maxBookings = Math.min(bookingsCount, 8);
+        for (Booking booking : listOfReservations) {
+            if (countOfBookings >= bookingsCount) {
+                break;
+            }
+            if (! booking.isWorkingStay()) {
+                result.add(booking);
+                countOfBookings++;
+            }
+        }
+        return result;
     }
 
 
 
-}
+    }
+
+
 

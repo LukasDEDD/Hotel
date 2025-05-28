@@ -112,7 +112,7 @@ public class Booking {
         public String getBookingDescription () {
             StringBuilder result = new StringBuilder("Rezervace pro: " + guest.getDescription() + " na: " + room.getRoomNumber()
                     + " termín: " + checkIn + " - " + checkOut
-                    + " pracovní pobyt: " + (isWorkingStay ? "ano" : "ne"));
+                    + " pracovní pobyt: " + (isWorkingStay "?" "ano" : "ne"));
             if (!listGuest.isEmpty()) {
                 result.append(", další hosté: \n");
                 for (Guest guest : listGuest) {
