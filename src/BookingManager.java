@@ -56,7 +56,7 @@ public class BookingManager {
         return result;
     }
 
-    public void printGuestStatistics(){
+    public void printGuestStatistics() {
         int oneGuest = 0, twoGuests = 0, moreGuests = 0;
         for (Booking booking : listOfReservations) {
             switch (booking.getGuestsCount()) {
