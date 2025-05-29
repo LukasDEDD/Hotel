@@ -45,7 +45,7 @@ public class BookingManager {
         List<Booking> result = new ArrayList<>();
         int maxBookings = Math.min(bookingsCount, 8);
         for (Booking booking : listOfReservations) {
-            if (countOfBookings >= bookingsCount) {
+            if (countOfBookings >= maxBookings) {
                 break;
             }
             if (! booking.WorkingStay()) {
@@ -56,9 +56,29 @@ public class BookingManager {
         return result;
     }
 
-
-
+    public void printGuestStatistics(){
+        int oneGuest = 0, twoGuests = 0, moreGuests = 0;
+        for (Booking booking : listOfReservations) {
+            switch (booking.getGuestsCount()) {
+                case 1:
+                    oneGuest++;
+                    break;
+                case 2:
+                    twoGuests++;
+                    break;
+                default:
+                    moreGuests++;
+            }
+        }
+        System.out.println("Počet rezervací s jedním hostem: " + oneGuest);
+        System.out.println("Počet rezervací se dvěma hosty: " + twoGuests);
+        System.out.println("Počet rezervací s více hosty: " + moreGuests);
     }
+}
+
+
+
+
 
 
 
