@@ -1,3 +1,4 @@
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -7,9 +8,9 @@ public class Room {
     private Integer capacity;
     private Boolean balcony;
     private Boolean seaView;
-    private double price;
+    private BigDecimal price;
 
-    public Room(Integer roomNumber, Integer capacity, Boolean balcony, Boolean seaView, double price) {
+    public Room(Integer roomNumber, Integer capacity, Boolean balcony, Boolean seaView, BigDecimal price) {
         this.roomNumber = roomNumber;
         this.capacity = capacity;
         this.balcony = balcony;
@@ -49,11 +50,11 @@ public class Room {
         this.seaView = seaView;
     }
 
-    public double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 

@@ -1,3 +1,4 @@
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -97,6 +98,14 @@ public class Booking {
         this.bookingList = bookingList;
     }
 
+    public List<Guest> getListGuest() {
+        return listGuest;
+    }
+
+    public void setListGuest(List<Guest> listGuest) {
+        this.listGuest = listGuest;
+    }
+
     public List<Guest> addListGuest() {
         return listGuest;
     }
@@ -105,8 +114,8 @@ public class Booking {
         return listGuest;
     }
 
-    public int getGuestsCount () {
-        return listGuest.size();
+    public int getGuestsCount() {
+        return listGuest.size() + 1;
     }
 
         public String getBookingDescription () {
@@ -121,7 +130,23 @@ public class Booking {
             }
             return result.toString();
         }
+
+
+    public int getBookingLength() {
+        return checkIn.until(checkOut).getDays();
     }
+
+    public BigDecimal getTotalPrice() {
+        return room.getPrice().multiply(BigDecimal.valueOf(getBookingLength()));
+    }
+
+    public String getFormattedSummary() {
+        Guest guest = getGuest();
+        return  getCheckIn()+" až "+getCheckOut()+": "+guest.getName()+" "+guest.getSurname()+
+                " ("+ guest.getBirthDate()+")["+
+                (getListGuest().size()+1)+", "+(getRoom().getSeaView()?"ano":"ne")+"] za "+getTotalPrice()+" Kč";
+    }
+}
 
 
 

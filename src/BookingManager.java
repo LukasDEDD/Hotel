@@ -59,7 +59,7 @@ public class BookingManager {
     public void printGuestStatistics() {
         int oneGuest = 0, twoGuests = 0, moreGuests = 0;
         for (Booking booking : listOfReservations) {
-            switch (booking.getGuestsCount()) {
+            switch (booking.getGuestsCount()){
                 case 1:
                     oneGuest++;
                     break;
